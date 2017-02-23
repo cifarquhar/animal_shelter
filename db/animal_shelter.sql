@@ -4,7 +4,7 @@ DROP TABLE owners;
 CREATE TABLE animals(
 id SERIAL4 PRIMARY KEY,
 name VARCHAR(255) not null,
-admission_date DATE,
+admission_date TIMESTAMP,
 adoptable BOOLEAN,
 owner VARCHAR(255),
 training_status BOOLEAN,
