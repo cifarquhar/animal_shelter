@@ -13,3 +13,9 @@ owner2 = Owner.new({'name' => "Vicky"})
 
 owner1.save()
 owner2.save()
+
+
+
+
+binding.pry
+nil
