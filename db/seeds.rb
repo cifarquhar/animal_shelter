@@ -7,3 +7,9 @@ animal2 = Animal.new({'name' => "Fudge",'admission_date' => '2016-12-10 16:00:00
 
 animal1.save()
 animal2.save()
+
+owner1 = Owner.new({'name' => "Colin"})
+owner2 = Owner.new({'name' => "Vicky"})
+
+owner1.save()
+owner2.save()
