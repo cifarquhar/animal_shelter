@@ -16,7 +16,7 @@ class Animal
   end
 
   def save()
-    sql = "INSERT INTO animals (name,admission_date,adoptable,training_status,vet_status) VALUES ('#{@name}',#{@admission_date},#{@adoptable},#{@training_status},#{@vet_status}) RETURNING id"
+    sql = "INSERT INTO animals (name,admission_date,adoptable,training_status,vet_status) VALUES ('#{@name}','#{@admission_date}',#{@adoptable},#{@training_status},#{@vet_status}) RETURNING id"
     animals = SqlRunner.run(sql)
     @id = animals[0]['id'].to_i
   end
