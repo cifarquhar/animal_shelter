@@ -21,5 +21,15 @@ class Animal
     @id = animals[0]['id'].to_i
   end
 
+  def self.map_animals(sql)
+    animals = SqlRunner.run(sql)
+    return animals.map {|animal| Animal.new(animal)}   
+  end
+
+  def self.all()
+    sql = "SELECT * FROM animals"
+    self.map_animals(sql)
+  end
+
 
 end
