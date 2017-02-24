@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('owner')
 
 class Animal
 
@@ -49,6 +50,12 @@ class Animal
   def delete()
     sql = "DELETE FROM animals WHERE id = #{@id}"
     SqlRunner.run(sql)
+  end
+
+  def owner()
+    sql = "SELECT o.* FROM owners o INNER JOIN animals a ON a.owner_id = o.id WHERE o.id = #{@owner_id}"
+    animal_owner = Owner.map_owners(sql)
+    return animal_owner.get_name
   end
 
 

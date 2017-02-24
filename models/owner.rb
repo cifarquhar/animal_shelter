@@ -9,6 +9,10 @@ class Owner
     @name = options['name']
   end
 
+  def get_name()
+    return @name
+  end
+
   def save()
     sql = "INSERT INTO owners (name) VALUES ('#{@name}') RETURNING id"
     owners = SqlRunner.run(sql)
@@ -41,7 +45,7 @@ class Owner
   end
 
   def adopt_animal(animal)
-    sql = "UPDATE animals SET (owner) = (#{@id}) WHERE id = #{animal.id}"
+    sql = "UPDATE animals SET (owner_id) = (#{@id}) WHERE id = #{animal.id}"
     SqlRunner.run(sql)
     animal.owner_id = @id
   end
