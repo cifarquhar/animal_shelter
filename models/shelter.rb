@@ -25,4 +25,8 @@ class Shelter
     new_owner.save()
   end
 
+  def assign_animal(owner,animal)
+    owner.adopt_animal(animal) if animal.adoptable == true
+  end
+
 end
