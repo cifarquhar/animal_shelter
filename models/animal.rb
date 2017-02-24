@@ -31,5 +31,10 @@ class Animal
     self.map_animals(sql)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM animals WHERE @id = #{id}"
+    self.map_animals(sql)
+  end
+
 
 end
