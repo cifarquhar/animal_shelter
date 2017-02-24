@@ -3,12 +3,13 @@ require_relative('owner')
 
 class Animal
 
-  attr_reader :id, :name, :admission_date
+  attr_reader :id, :name, :admission_date, :type
   attr_accessor :adoptable, :owner_id, :training_status, :vet_status
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
+    @type = options['type']
     @admission_date = options['admission_date']
     @adoptable = options['adoptable']
     @owner_id = options['owner_id'].to_i if options['owner_id']
@@ -17,7 +18,7 @@ class Animal
   end
 
   def save()
-    sql = "INSERT INTO animals (name,admission_date,adoptable,training_status,vet_status) VALUES ('#{@name}','#{@admission_date}',#{@adoptable},#{@training_status},#{@vet_status}) RETURNING id"
+    sql = "INSERT INTO animals (name,admission_date,type,adoptable,training_status,vet_status) VALUES ('#{@name}','#{@admission_date}','#{@type}',#{@adoptable},#{@training_status},#{@vet_status}) RETURNING id"
     animals = SqlRunner.run(sql)
     @id = animals[0]['id'].to_i
   end
