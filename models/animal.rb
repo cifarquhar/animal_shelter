@@ -4,7 +4,7 @@ require_relative('owner')
 class Animal
 
   attr_reader :id, :name, :admission_date
-  attr_accessor :owner_id, :training_status, :vet_status
+  attr_accessor :adoptable, :owner_id, :training_status, :vet_status
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -55,7 +55,7 @@ class Animal
   def owner()
     sql = "SELECT o.* FROM owners o INNER JOIN animals a ON a.owner_id = o.id WHERE o.id = #{@owner_id}"
     animal_owner = Owner.map_owners(sql)
-    return animal_owner.get_name
+    return animal_owner[0].name
   end
 
 
