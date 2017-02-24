@@ -35,4 +35,9 @@ class Owner
     SqlRunner.run(sql)
   end
 
+  def delete()
+    sql = "DELETE FROM owners WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
 end
