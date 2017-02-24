@@ -1,0 +1,28 @@
+<h1>Animals Looking for Homes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Type</th>
+    <th></th>
+    <th>Available for adoption?</th>
+    <th></th>
+    <th>In training?</th>
+    <th></th>
+    <th>Waiting to see a vet?</th>
+  </tr>
+  <% for animal in @animals %>
+  <tr>
+    <td><%= animal.name %></td>
+    <td>|</td>
+    <td><%= animal.type %></td>
+    <td>|</td>
+    <td><%= animal.adoptable %></td>
+    <td>|</td>
+    <td><%= animal.training_status %></td>
+    <td>|</td>
+    <td><%= animal.vet_status %></td>
+  </tr>
+  <% end %>
+</table>
