@@ -36,5 +36,10 @@ class Animal
     self.map_animals(sql)
   end
 
+  def update()
+    sql = "UPDATE animals SET (adoptable,training_status,vet_status) = (#{@adoptable},#{training_status},#{vet_status}) WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
 
 end
