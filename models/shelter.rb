@@ -21,4 +21,9 @@ class Shelter
     new_animal.save()
   end
 
+  def new_owner(owner_name)
+    new_owner = Owner.new({'name' => "#{owner_name}"})
+    new_owner.save()
+  end
+
 end
