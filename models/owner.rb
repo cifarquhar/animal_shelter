@@ -27,4 +27,9 @@ class Owner
     self.map_owners(sql)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM owners WHERE @id = #{id}"
+    self.map_owners(sql)
+  end
+
 end
