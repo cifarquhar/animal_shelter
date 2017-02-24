@@ -10,7 +10,7 @@ class Animal
     @name = options['name']
     @admission_date = options['admission_date']
     @adoptable = options['adoptable']
-    @owner = options['owner'] if options['owner']
+    @owner_id = options['owner_id'].to_i if options['owner_id']
     @training_status = options['training_status']
     @vet_status = options['vet_status']
   end

@@ -32,4 +32,9 @@ class Owner
     self.map_owners(sql)
   end
 
+  def update()
+    sql = "UPDATE owners SET (adopted_pets) = (#{@adopted_pets}) WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
 end
