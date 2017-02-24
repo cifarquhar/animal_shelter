@@ -40,4 +40,10 @@ class Owner
     SqlRunner.run(sql)
   end
 
+  def adopt_animal(animal)
+    sql = "UPDATE animals SET (owner) = (#{@id}) WHERE id = #{animal.id}"
+    SqlRunner.run(sql)
+    animal.owner_id = @id
+  end
+
 end
