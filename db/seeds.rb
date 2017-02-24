@@ -1,6 +1,7 @@
 require('pry')
 require_relative('../models/animal')
 require_relative('../models/owner')
+require_relative('../models/shelter')
 
 Animal.delete_all
 Owner.delete_all
