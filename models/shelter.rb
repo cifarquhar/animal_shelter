@@ -34,4 +34,30 @@ class Shelter
     owner.adopt_animal(animal) if animal.adoptable == true
   end
 
+  def check_adoptable_status(animal)
+    if animal.vet_status == false && animal.training_status == false
+      animal.adoptable = true
+    else
+      animal.adoptable = false
+    end
+  end
+
+  def change_vet_status(animal)
+    if animal.vet_status == true
+      animal.vet_status = false
+    elsif animal.vet_status == false
+      animal.vet_status = true
+    end
+    check_adoptable_status(animal)
+  end
+
+  def change_training_status(animal)
+    if animal.training_status == true
+      animal.training_status = false
+    elsif animal.training_status == false
+      animal.training_status = true
+    end
+    check_adoptable_status(animal)
+  end
+
 end
