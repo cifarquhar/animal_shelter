@@ -14,14 +14,14 @@ class Shelter
     Owner.all()
   end
 
-  def new_animal(animal_name,animal_training_status,animal_vet_status)
+  def new_animal(animal_name,animal_type,animal_training_status,animal_vet_status)
     timestamp = Time.new.to_s
     if animal_training_status == false && animal_vet_status == false
       animal_adoptable = true
     else
       animal_adoptable = false
     end
-    new_animal = Animal.new({'name' => "#{animal_name}", 'admission_date' => timestamp, 'adoptable' => animal_adoptable, 'training_status' => animal_training_status, 'vet_status' => animal_vet_status})
+    new_animal = Animal.new({'name' => "#{animal_name}", 'type' => "#{animal_type}", 'admission_date' => timestamp, 'adoptable' => animal_adoptable, 'training_status' => animal_training_status, 'vet_status' => animal_vet_status})
     new_animal.save()
   end
 
@@ -49,6 +49,7 @@ class Shelter
       animal.vet_status = true
     end
     check_adoptable_status(animal)
+    animal.update
   end
 
   def change_training_status(animal)
@@ -58,6 +59,7 @@ class Shelter
       animal.training_status = true
     end
     check_adoptable_status(animal)
+    animal.update
   end
 
 end
