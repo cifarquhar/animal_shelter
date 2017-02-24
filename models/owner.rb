@@ -50,4 +50,10 @@ class Owner
     animal.owner_id = @id
   end
 
+  def animals()
+    sql = "SELECT a.* FROM animals a INNER JOIN owners o ON a.owner_id = o.id WHERE a.owner_id = #{@id}"
+    animals = Animal.map_animals(sql)
+    animals.map {|animal| animal.name}
+  end
+
 end
