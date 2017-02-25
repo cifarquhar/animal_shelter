@@ -25,3 +25,17 @@ get '/animals/:id' do
   print @animal
   erb(:"animals/show")
 end
+
+get '/animals/:id/edit' do
+  @animal = Animal.find(params[:id])[0]
+  erb(:"animals/edit")
+end
+
+
+post '/animals/:id' do
+  @animal = Animal.find(params[:id])[0]
+  @shelter = Shelter.new
+  @shelter.change_vet_status(@animal)
+  @shelter.change_training_status(@animal)
+  redirect to "animals/#{animal.id}"
+end
