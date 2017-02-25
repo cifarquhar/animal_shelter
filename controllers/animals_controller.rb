@@ -19,3 +19,9 @@ post '/animals' do
   @shelter.new_animal(params[:name],params[:type],params[:training_status],params[:vet_status])
   erb(:"animals/create")
 end
+
+get '/animals/:id' do
+  @animal = Animal.find(params[:id])[0]
+  print @animal
+  erb(:"animals/show")
+end
