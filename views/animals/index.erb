@@ -14,7 +14,7 @@
   </tr>
   <% for animal in @animals %>
   <tr>
-    <td><%= animal.name %></td>
+    <td> <a href="/animals/<%= animal.id %>"><%= animal.name %></td></a>
     <td>|</td>
     <td><%= animal.type %></td>
     <td>|</td>
