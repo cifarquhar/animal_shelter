@@ -18,11 +18,35 @@
     <td>|</td>
     <td><%= animal.type %></td>
     <td>|</td>
-    <td><%= animal.adoptable %></td>
+    <td>
+    <% if animal.adoptable == 't' %>
+    Yes 
+    <% elsif animal.adoptable == 'f' %>
+    No     
+    <% else %>
+    Error
+    <% end %>
+    </td>
     <td>|</td>
-    <td><%= animal.training_status %></td>
+    <td>
+    <% if animal.training_status == 't' %>
+    Yes 
+    <% elsif animal.training_status == 'f' %>
+    No     
+    <% else %>
+    Error
+    <% end %>
+    </td>
     <td>|</td>
-    <td><%= animal.vet_status %></td>
+    <td>
+    <% if animal.vet_status == 't' %>
+    Yes 
+    <% elsif animal.vet_status == 'f' %>
+    No     
+    <% else %>
+    Error
+    <% end %>
+    </td>
   </tr>
   <% end %>
 </table>

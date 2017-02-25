@@ -21,7 +21,7 @@ class Shelter
     else
       animal_adoptable = false
     end
-    new_animal = Animal.new({'name' => "#{animal_name}", 'type' => "#{animal_type}", 'admission_date' => timestamp, 'adoptable' => animal_adoptable, 'training_status' => animal_training_status, 'vet_status' => animal_vet_status})
+    new_animal = Animal.new({'name' => "#{animal_name.capitalize}", 'type' => "#{animal_type.capitalize}", 'admission_date' => timestamp, 'adoptable' => animal_adoptable, 'training_status' => animal_training_status, 'vet_status' => animal_vet_status})
     new_animal.save()
   end
 
