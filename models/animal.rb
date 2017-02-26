@@ -54,6 +54,7 @@ class Animal
   end
 
   def assign_to_owner(owner)
+    @owner_id = nil
     sql = "UPDATE animals SET (owner_id) = (#{owner.id}) WHERE id = #{@id}"
     SqlRunner.run(sql)
     @owner_id = owner.id

@@ -3,10 +3,18 @@
 <table>
   <tr>
     <th>Name</th>
+    <th></th>
+    <th>Pets Owned</th>
   </tr>
   <% for owner in @owners %>
   <tr>
-    <td><%= owner.name %></td>
+    <td><a href="/owners/<%= owner.id %>"><%= owner.name %></a></td>
+    <td>|</td>
+    <td>
+      <% for animal in Animal.all %>
+       <%= animal.name if animal.owner_id = owner.id %>
+      <% end %>
+    </td>
   </tr>
   <% end %>
 </table>
