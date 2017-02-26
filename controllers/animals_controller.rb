@@ -22,7 +22,6 @@ end
 
 get '/animals/:id' do
   @animal = Animal.find(params[:id])
-  print @animal
   erb(:"animals/show")
 end
 

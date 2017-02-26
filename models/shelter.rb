@@ -30,9 +30,9 @@ class Shelter
     new_owner.save()
   end
 
-  def assign_animal(owner,animal)
-    owner.adopt_animal(animal) if animal.adoptable == true
-  end
+  # def assign_animal(owner,animal)
+  #   owner.adopt_animal(animal) if animal.adoptable == true
+  # end
 
   def check_adoptable_status(animal)
     if animal.vet_status == false && animal.training_status == false
