@@ -6,7 +6,10 @@
 <p>In training?: <%= @animal.training_status %></p>
 <p>Waiting for vet treatment?: <%= @animal.vet_status %></p>
 
-<a href="/animals/<%= @animal.id %>/edit">Update Details</a>
+
+<form method="GET" action="/animals/<%= @animal.id %>/edit" >
+  <input type="submit" value="Update Details"/>
+</form>
 
 <form method="POST" action="/animals/<%= @animal.id %>/delete" >
   <input type="submit" value="Delete Record"/>
