@@ -31,7 +31,7 @@ class Owner
 
   def self.find(id)
     sql = "SELECT * FROM owners WHERE @id = #{id}"
-    self.map_owners(sql)
+    self.map_owners(sql)[0]
   end
 
   def self.delete_all()

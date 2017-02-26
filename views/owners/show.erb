@@ -1,0 +1,5 @@
+<p>Name: <%= @owner.name %></p>
+
+<form method="POST" action="/owners/<%= @owner.id %>/delete" >
+  <input type="submit" value="Delete Record"/>
+</form>
