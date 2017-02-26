@@ -31,11 +31,16 @@ get '/animals/:id/edit' do
   erb(:"animals/edit")
 end
 
-
 post '/animals/:id' do
   @animal = Animal.find(params[:id])[0]
   @shelter = Shelter.new
   @shelter.change_vet_status(@animal)
   @shelter.change_training_status(@animal)
   redirect to "animals/#{animal.id}"
+end
+
+post '/animals/:id/delete' do
+  animal = Animal.find(params[:id])
+  animal[0].delete() 
+  erb(:"animals/destroy")
 end

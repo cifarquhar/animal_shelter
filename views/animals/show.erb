@@ -7,3 +7,7 @@
 <p>Waiting for vet treatment?: <%= @animal.vet_status %></p>
 
 <a href="/animals/<%= @animal.id %>/edit">Update Details</a>
+
+<form method="POST" action="/animals/<%= @animal.id %>/delete" >
+  <input type="submit" value="Delete Record"/>
+</form>

@@ -9,7 +9,7 @@ Owner.delete_all
 shelter = Shelter.new
 
 animal1 = Animal.new({'name' => "Ringo", 'type' => "Tortoise", 'admission_date' => '2017-02-23 15:00:00', 'adoptable' => true, 'training_status' => false, 'vet_status' => false})
-animal2 = Animal.new({'name' => "Fudge", 'type' => "Dog", 'admission_date' => '2016-12-10 16:00:00', 'adoptable' => false, 'training_status' => true, 'vet_status' => true})
+animal2 = Animal.new({'name' => "Milly", 'type' => "Cat", 'admission_date' => '2016-12-10 16:00:00', 'adoptable' => false, 'training_status' => true, 'vet_status' => true})
 
 animal1.save()
 animal2.save()
