@@ -1,0 +1,12 @@
+<form method="POST" action="/animals/<%= @animal.id %>/assign">
+<% @owners = Owner.all %>
+
+
+<label for="owner-name">Owner to assign to:</label>
+<select id="owner-name" name="owner_id">
+ <% @owners.each do |owner|%>
+     <option value=<%= owner.id %>><%= owner.name %></option>
+     <% end %>
+</select>
+
+<input type="submit" value="Add owner"/>

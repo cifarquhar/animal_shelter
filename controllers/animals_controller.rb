@@ -49,3 +49,10 @@ get '/animals/:id/assign' do
   @animal = Animal.find(params[:id])
   erb(:"animals/assign")
 end
+
+post '/animals/:id/assign' do
+  animal = Animal.find(params[:id])
+  owner = Owner.find(params[:owner_id])
+  animal.assign_to_owner(owner)
+  erb(:"animals/assign_confirm")
+end

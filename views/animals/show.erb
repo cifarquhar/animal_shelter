@@ -2,13 +2,17 @@
 <p>Type: <%= @animal.type %></p>
 <p>Admission Date: <%= @animal.admission_date %></p>
 <p>Ready for adoption?: <%= @animal.adoptable %></p>
-<p>Owner: <%= @animal.owner_id %></p>
+<p>Owner: <%= Owner.find(@animal.owner_id).name if @animal.owner_id %></p>
 <p>In training?: <%= @animal.training_status %></p>
 <p>Waiting for vet treatment?: <%= @animal.vet_status %></p>
 
 
 <form method="GET" action="/animals/<%= @animal.id %>/edit" >
   <input type="submit" value="Update Details"/>
+</form>
+
+<form method="GET" action="/animals/<%= @animal.id %>/assign" >
+  <input type="submit" value="Assign to Owner"/>
 </form>
 
 <form method="POST" action="/animals/<%= @animal.id %>/delete" >
