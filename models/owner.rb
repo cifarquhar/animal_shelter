@@ -44,11 +44,11 @@ class Owner
     SqlRunner.run(sql)
   end
 
-  def adopt_animal(animal)
-    sql = "UPDATE animals SET (owner_id) = (#{@id}) WHERE id = #{animal.id}"
-    SqlRunner.run(sql)
-    animal.owner_id = @id
-  end
+  # def adopt_animal(animal)
+  #   sql = "UPDATE animals SET (owner_id) = (#{@id}) WHERE id = #{animal.id}"
+  #   SqlRunner.run(sql)
+  #   animal.owner_id = @id
+  # end
 
   def animals()
     sql = "SELECT a.* FROM animals a INNER JOIN owners o ON a.owner_id = o.id WHERE a.owner_id = #{@id}"

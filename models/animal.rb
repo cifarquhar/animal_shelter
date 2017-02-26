@@ -53,6 +53,12 @@ class Animal
     SqlRunner.run(sql)
   end
 
+  def assign_to_owner(owner)
+    sql = "UPDATE animals SET (owner_id) = (#{owner.id}) WHERE id = #{@id}"
+    SqlRunner.run(sql)
+    @owner_id = owner.id
+  end
+
   def owner()
     sql = "SELECT o.* FROM owners o INNER JOIN animals a ON a.owner_id = o.id WHERE o.id = #{@owner_id}"
     animal_owner = Owner.map_owners(sql)

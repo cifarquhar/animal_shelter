@@ -44,3 +44,8 @@ post '/animals/:id/delete' do
   animal.delete() 
   erb(:"animals/destroy")
 end
+
+get '/animals/:id/assign' do
+  @animal = Animal.find(params[:id])
+  erb(:"animals/assign")
+end
