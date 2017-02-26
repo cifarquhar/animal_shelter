@@ -6,6 +6,8 @@
     <th></th>
     <th>Type</th>
     <th></th>
+    <th>Admission date</th>
+    <th></th>
     <th>Available for adoption?</th>
     <th></th>
     <th>In training?</th>
@@ -17,6 +19,8 @@
     <td> <a href="/animals/<%= animal.id %>"><%= animal.name %></td></a>
     <td>|</td>
     <td><%= animal.type %></td>
+    <td>|</td>
+    <td><%= animal.admission_date %></td>
     <td>|</td>
     <td>
     <% if animal.adoptable == 't' %>

@@ -35,7 +35,7 @@ class Animal
 
   def self.find(id)
     sql = "SELECT * FROM animals WHERE @id = #{id}"
-    self.map_animals(sql)
+    self.map_animals(sql)[0]
   end
 
   def update()

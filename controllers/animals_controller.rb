@@ -21,18 +21,18 @@ post '/animals' do
 end
 
 get '/animals/:id' do
-  @animal = Animal.find(params[:id])[0]
+  @animal = Animal.find(params[:id])
   print @animal
   erb(:"animals/show")
 end
 
 get '/animals/:id/edit' do
-  @animal = Animal.find(params[:id])[0]
+  @animal = Animal.find(params[:id])
   erb(:"animals/edit")
 end
 
 post '/animals/:id' do
-  @animal = Animal.find(params[:id])[0]
+  @animal = Animal.find(params[:id])
   @shelter = Shelter.new
   @shelter.change_vet_status(@animal)
   @shelter.change_training_status(@animal)
@@ -41,6 +41,6 @@ end
 
 post '/animals/:id/delete' do
   animal = Animal.find(params[:id])
-  animal[0].delete() 
+  animal.delete() 
   erb(:"animals/destroy")
 end
