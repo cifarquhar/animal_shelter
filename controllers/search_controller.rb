@@ -6,7 +6,7 @@ require_relative('../models/owner.rb')
 
 
 
-get '/search' do
+get '/search/animal' do
   erb ( :"search/new" )
 end
 
