@@ -2,5 +2,5 @@
 <p>Pets Owned: <%= @owner.animals.join(", ") %></p>
 
 <form method="POST" action="/owners/<%= @owner.id %>/delete" >
-  <input type="submit" value="Delete Record"/>
+  <input class="func_button" type="submit" value="Delete Record"/>
 </form>
