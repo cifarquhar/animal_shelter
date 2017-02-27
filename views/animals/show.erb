@@ -7,8 +7,16 @@
 <p>Waiting for vet treatment?: <%= @animal.vet_status %></p>
 
 
-<form method="GET" action="/animals/<%= @animal.id %>/edit" >
+<!-- <form method="GET" action="/animals/<%= @animal.id %>/edit" >
   <input type="submit" value="Update Details"/>
+</form> -->
+
+<form method="GET" action="/animals/<%= @animal.id %>/edit_vet" >
+  <input type="submit" value="Change Vet Status"/>
+</form>
+
+<form method="GET" action="/animals/<%= @animal.id %>/edit_training" >
+  <input type="submit" value="Change Training Status"/>
 </form>
 
 <form method="GET" action="/animals/<%= @animal.id %>/assign" >

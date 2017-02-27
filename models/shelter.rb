@@ -28,20 +28,30 @@ class Shelter
   end
 
   def change_vet_status(animal)
-    if animal.vet_status == true
+    if animal.vet_status == 't'
       animal.vet_status = false
-    elsif animal.vet_status == false
+    elsif animal.vet_status == 'f'
       animal.vet_status = true
+    end
+    if animal.training_status == 't'
+      animal.training_status = true
+    elsif animal.training_status == 'f'
+      animal.training_status = false
     end
     check_adoptable_status(animal)
     animal.update
   end
 
   def change_training_status(animal)
-    if animal.training_status == true
+    if animal.training_status == 't'
       animal.training_status = false
-    elsif animal.training_status == false
+    elsif animal.training_status == 'f'
       animal.training_status = true
+    end
+    if animal.vet_status == 't'
+      animal.vet_status = true
+    elsif animal.vet_status == 'f'
+      animal.vet_status = false
     end
     check_adoptable_status(animal)
     animal.update
