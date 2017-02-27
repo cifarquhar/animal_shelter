@@ -12,17 +12,17 @@
 </form> -->
 
 <form method="GET" action="/animals/<%= @animal.id %>/edit_vet" >
-  <input type="submit" value="Change Vet Status"/>
+  <input class="func_button" type="submit" value="Change Vet Status"/>
 </form>
 
 <form method="GET" action="/animals/<%= @animal.id %>/edit_training" >
-  <input type="submit" value="Change Training Status"/>
+  <input class="func_button" type="submit" value="Change Training Status"/>
 </form>
 
 <form method="GET" action="/animals/<%= @animal.id %>/assign" >
-  <input type="submit" value="Assign to Owner"/>
+  <input class="func_button" type="submit" value="Assign to Owner"/>
 </form>
 
 <form method="POST" action="/animals/<%= @animal.id %>/delete" >
-  <input type="submit" value="Delete Record"/>
+  <input class="func_button" type="submit" value="Delete Record"/>
 </form>
