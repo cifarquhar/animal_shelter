@@ -1,10 +1,10 @@
 <p>Name: <%= @animal.name %></p>
 <p>Type: <%= @animal.type %></p>
 <p>Admission Date: <%= @animal.admission_date %></p>
-<p>Ready for adoption?: <%= @animal.adoptable %></p>
+<p>Ready for adoption?: <%= @animal.adoptable == 't' ? "Yes" : "No" %></p>
 <p>Owner: <%= Owner.find(@animal.owner_id).name if @animal.owner_id %></p>
-<p>In training?: <%= @animal.training_status %></p>
-<p>Waiting for vet treatment?: <%= @animal.vet_status %></p>
+<p>In training?: <%= @animal.training_status == 't' ? "Yes" : "No" %></p>
+<p>Waiting for vet treatment?: <%= @animal.vet_status == 't' ? "Yes" : "No" %></p>
 
 
 <!-- <form method="GET" action="/animals/<%= @animal.id %>/edit" >
