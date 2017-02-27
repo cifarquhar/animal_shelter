@@ -4,14 +4,14 @@
 
  <label for="training-status">Training required?</label>
  <select id="training-status" name="training_status">
-   <option selected <%= "selected" if (@animal.training_status == true) %> value="<%=true%>">Yes</option>
-   <option selected <%= "selected" if (@animal.training_status == false) %> value="<%=false%>">No</option>
+   <option <%= "selected" if (@animal.training_status == 't') %> value="<%=true%>">Yes</option>
+   <option <%= "selected" if (@animal.training_status == 'f') %> value="<%=false%>">No</option>
  </select>
 
  <label for="training-status">Vet treatment required?</label>
  <select id="training-status" name="training_status">
-   <option selected <%= "selected" if (@animal.vet_status == true) %> value="<%=true%>">Yes</option>
-   <option selected <%= "selected" if (@animal.vet_status == false) %> value="<%=false%>">No</option>
+   <option <%= "selected" if (@animal.vet_status == 't') %> value="<%=true%>">Yes</option>
+   <option <%= "selected" if (@animal.vet_status == 'f') %> value="<%=false%>">No</option>
  </select>
 
   <input type="submit" value="Save Changes"/>
