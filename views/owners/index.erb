@@ -11,7 +11,7 @@
     <td><a href="/owners/<%= owner.id %>"><%= owner.name %></a></td>
     <td>|</td>
     <td>
-      <%= owner.animals %>
+      <%= owner.animals.join(", ") %>
     </td>
   </tr>
   <% end %>
