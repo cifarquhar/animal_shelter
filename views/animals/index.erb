@@ -1,5 +1,11 @@
-<h1>Animals Looking for Homes</h1>
+<div class="tabs">
 
+<div class="tab">
+       <input type="radio" id="tab-1" name="tab-group-1" checked>
+       <label for="tab-1">All Animals</label>
+
+
+<div class="content"> 
 <table>
   <tr>
     <th>Name</th>
@@ -56,6 +62,222 @@
 </table>
 
 
+
+</div>
+
+</div>
+
+
+
+
+
+
+<div class="tab">
+       <input type="radio" id="tab-2" name="tab-group-1">
+       <label for="tab-2">Animals Ready for Adoption</label>
+
+
+<div class="content"> 
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Type</th>
+    <th></th>
+    <th>Admission date</th>
+    <th></th>
+    <th>Available for adoption?</th>
+    <th></th>
+    <th>In training?</th>
+    <th></th>
+    <th>Waiting to see a vet?</th>
+  </tr>
+  <% for animal in @animals %>
+  <% if animal.adoptable == 't' %>
+  <tr>
+    <td> <a href="/animals/<%= animal.id %>"><%= animal.name %></td></a>
+    <td>|</td>
+    <td><%= animal.type %></td>
+    <td>|</td>
+    <td><%= animal.admission_date %></td>
+    <td>|</td>
+    <td>
+    <% if animal.adoptable == 't' %>
+    Yes 
+    <% elsif animal.adoptable == 'f' %>
+    No     
+    <% else %>
+    Error
+    <% end %>
+    </td>
+    <td>|</td>
+    <td>
+    <% if animal.training_status == 't' %>
+    Yes 
+    <% elsif animal.training_status == 'f' %>
+    No     
+    <% else %>
+    Error
+    <% end %>
+    </td>
+    <td>|</td>
+    <td>
+    <% if animal.vet_status == 't' %>
+    Yes 
+    <% elsif animal.vet_status == 'f' %>
+    No     
+    <% else %>
+    Error
+    <% end %>
+    </td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
+</div>
+
+</div>
+
+
+
+<div class="tab">
+       <input type="radio" id="tab-3" name="tab-group-1">
+       <label for="tab-3">Animals Getting Further Training</label>
+
+
+<div class="content"> 
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Type</th>
+    <th></th>
+    <th>Admission date</th>
+    <th></th>
+    <th>Available for adoption?</th>
+    <th></th>
+    <th>In training?</th>
+    <th></th>
+    <th>Waiting to see a vet?</th>
+  </tr>
+  <% for animal in @animals %>
+  <% if animal.training_status == 't' %>
+  <tr>
+    <td> <a href="/animals/<%= animal.id %>"><%= animal.name %></td></a>
+    <td>|</td>
+    <td><%= animal.type %></td>
+    <td>|</td>
+    <td><%= animal.admission_date %></td>
+    <td>|</td>
+    <td>
+    <% if animal.adoptable == 't' %>
+    Yes 
+    <% elsif animal.adoptable == 'f' %>
+    No     
+    <% else %>
+    Error
+    <% end %>
+    </td>
+    <td>|</td>
+    <td>
+    <% if animal.training_status == 't' %>
+    Yes 
+    <% elsif animal.training_status == 'f' %>
+    No     
+    <% else %>
+    Error
+    <% end %>
+    </td>
+    <td>|</td>
+    <td>
+    <% if animal.vet_status == 't' %>
+    Yes 
+    <% elsif animal.vet_status == 'f' %>
+    No     
+    <% else %>
+    Error
+    <% end %>
+    </td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
+</div>
+
+</div>
+
+
+
+
+<div class="tab">
+       <input type="radio" id="tab-4" name="tab-group-1">
+       <label for="tab-4">Animals Waiting for Vet Treatment</label>
+
+<div class="content"> 
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Type</th>
+    <th></th>
+    <th>Admission date</th>
+    <th></th>
+    <th>Available for adoption?</th>
+    <th></th>
+    <th>In training?</th>
+    <th></th>
+    <th>Waiting to see a vet?</th>
+  </tr>
+  <% for animal in @animals %>
+  <% if animal.vet_status == 't' %>
+  <tr>
+    <td> <a href="/animals/<%= animal.id %>"><%= animal.name %></td></a>
+    <td>|</td>
+    <td><%= animal.type %></td>
+    <td>|</td>
+    <td><%= animal.admission_date %></td>
+    <td>|</td>
+    <td>
+    <% if animal.adoptable == 't' %>
+    Yes 
+    <% elsif animal.adoptable == 'f' %>
+    No     
+    <% else %>
+    Error
+    <% end %>
+    </td>
+    <td>|</td>
+    <td>
+    <% if animal.training_status == 't' %>
+    Yes 
+    <% elsif animal.training_status == 'f' %>
+    No     
+    <% else %>
+    Error
+    <% end %>
+    </td>
+    <td>|</td>
+    <td>
+    <% if animal.vet_status == 't' %>
+    Yes 
+    <% elsif animal.vet_status == 'f' %>
+    No     
+    <% else %>
+    Error
+    <% end %>
+    </td>
+  </tr>
+  <% end %>
+  <% end %>
+</table>
+</div>
+
+</div>
+
+</div>
+
+
 <form method="GET" action="/animals/new" >
   <input type="submit" value="Add New Animal"/>
 </form>
+
