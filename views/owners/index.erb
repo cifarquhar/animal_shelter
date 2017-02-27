@@ -11,9 +11,7 @@
     <td><a href="/owners/<%= owner.id %>"><%= owner.name %></a></td>
     <td>|</td>
     <td>
-      <% for animal in Animal.all %>
-       <%= animal.name if animal.owner_id = owner.id %>
-      <% end %>
+      <%= owner.animals %>
     </td>
   </tr>
   <% end %>

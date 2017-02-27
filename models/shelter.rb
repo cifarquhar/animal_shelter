@@ -6,29 +6,29 @@ class Shelter
   def initialize()
   end
 
-  def list_animals()
-    Animal.all()
-  end
+  # def list_animals()
+  #   Animal.all()
+  # end
 
-  def list_owners()
-    Owner.all()
-  end
+  # def list_owners()
+  #   Owner.all()
+  # end
 
   def new_animal(animal_name,animal_type,animal_training_status,animal_vet_status)
     timestamp = Time.new.to_s
-    if animal_training_status == false && animal_vet_status == false
-      animal_adoptable = true
-    else
-      animal_adoptable = false
-    end
+
+    animal_adoptable = false
+
+    animal_adoptable = true if animal_training_status == "false" && animal_vet_status == "false"
+  
     new_animal = Animal.new({'name' => "#{animal_name.capitalize}", 'type' => "#{animal_type.capitalize}", 'admission_date' => timestamp, 'adoptable' => animal_adoptable, 'training_status' => animal_training_status, 'vet_status' => animal_vet_status})
     new_animal.save()
   end
 
-  def new_owner(owner_name)
-    new_owner = Owner.new({'name' => "#{owner_name}"})
-    new_owner.save()
-  end
+  # def new_owner(owner_name)
+  #   new_owner = Owner.new({'name' => "#{owner_name}"})
+  #   new_owner.save()
+  # end
 
   # def assign_animal(owner,animal)
   #   owner.adopt_animal(animal) if animal.adoptable == true
@@ -37,7 +37,7 @@ class Shelter
   def check_adoptable_status(animal)
     if animal.vet_status == false && animal.training_status == false
       animal.adoptable = true
-    else
+    elsif animal.vet_status == true || animal.training_status == true
       animal.adoptable = false
     end
   end
