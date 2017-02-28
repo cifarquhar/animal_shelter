@@ -26,7 +26,7 @@ get '/animals/:id' do
   erb(:"animals/show")
 end
 
-get '/animals/:id/edit' do
+get '/animals/:id/edit_bio' do
   @animal = Animal.find(params[:id])
   erb(:"animals/edit")
 end
@@ -47,10 +47,8 @@ end
 
 post '/animals/:id' do
   @animal = Animal.find(params[:id])
-  @shelter = Shelter.new
-  @shelter.change_vet_status(@animal)
-  @shelter.change_training_status(@animal)
-  redirect to "animals/#{animal.id}"
+  @animal.add_bio(params[:biography])
+  erb(:"animals/create_bio")
 end
 
 post '/animals/:id/delete' do

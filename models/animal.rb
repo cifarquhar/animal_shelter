@@ -75,7 +75,11 @@ class Animal
   def show_bio()
     sql = "SELECT b.* FROM bios b INNER JOIN animals a ON a.id = b.animal_id WHERE b.animal_id = #{@id}"
     bio = Bio.map_bios(sql)[0]
-    return bio.biography
+    if bio
+      return bio.biography
+    else
+      return ""
+    end
   end
 
 

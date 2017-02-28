@@ -44,6 +44,12 @@
 </div>
 
 <div class="flex_grid_cell">
+<form method="GET" action="/animals/<%= @animal.id %>/edit_bio" >
+  <input class="func_button" type="submit" value="Add/Edit Bio"/>
+</form>
+</div>
+
+<div class="flex_grid_cell">
 <form method="GET" action="/animals/<%= @animal.id %>/assign" >
   <input class="func_button" type="submit" value="Assign to Owner"/>
 </form>

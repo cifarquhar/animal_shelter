@@ -2,18 +2,11 @@
 
  <p>Name: <%= @animal.name %></p>
 
- <label for="training-status">Training required?</label>
- <select id="training-status" name="training_status">
-   <option <%= "selected" if (@animal.training_status == 't') %> value="<%=true%>">Yes</option>
-   <option <%= "selected" if (@animal.training_status == 'f') %> value="<%=false%>">No</option>
- </select>
+ <label for="bio">What's this animal's story?</label>
+<textarea class="submissionfield" id="bio" name="biography"></textarea>
 
- <label for="training-status">Vet treatment required?</label>
- <select id="training-status" name="training_status">
-   <option <%= "selected" if (@animal.vet_status == 't') %> value="<%=true%>">Yes</option>
-   <option <%= "selected" if (@animal.vet_status == 'f') %> value="<%=false%>">No</option>
- </select>
+<!--  <input class="submissionfield" type="text" id="bio" name="biography"/> -->
 
-  <input type="submit" value="Save Changes"/>
+  <input class="func_button" type="submit" value="Add biography"/>
   
 </form>
