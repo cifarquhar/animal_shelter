@@ -11,6 +11,7 @@
 <p>Owner: <%= Owner.find(@animal.owner_id).name if @animal.owner_id %></p>
 <p>In training?: <%= @animal.training_status == 't' ? "Yes" : "No" %></p>
 <p>Waiting for vet treatment?: <%= @animal.vet_status == 't' ? "Yes" : "No" %></p>
+<p>Bio: <%= @animal.show_bio %></p>
 </div>
 
 

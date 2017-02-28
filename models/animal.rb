@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('owner')
+require_relative('bio')
 
 class Animal
 
@@ -64,6 +65,17 @@ class Animal
     sql = "SELECT o.* FROM owners o INNER JOIN animals a ON a.owner_id = o.id WHERE o.id = #{@owner_id}"
     animal_owner = Owner.map_owners(sql)
     return animal_owner[0].name
+  end
+
+  def add_bio(bio)
+    new_bio = Bio.new({'animal_id' => @id, 'biography' => bio})
+    new_bio.save
+  end
+
+  def show_bio()
+    sql = "SELECT b.* FROM bios b INNER JOIN animals a ON a.id = b.animal_id WHERE b.animal_id = #{@id}"
+    bio = Bio.map_bios(sql)[0]
+    return bio.biography
   end
 
 

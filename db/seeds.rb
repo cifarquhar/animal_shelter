@@ -2,7 +2,9 @@ require('pry')
 require_relative('../models/animal')
 require_relative('../models/owner')
 require_relative('../models/shelter')
+require_relative('../models/bio')
 
+Bio.delete_all
 Animal.delete_all
 Owner.delete_all
 
@@ -20,6 +22,9 @@ owner2 = Owner.new({'name' => "Vicky"})
 owner1.save()
 owner2.save()
 
+bio1 = Bio.new({'animal_id' => animal1.id, 'biography' => "Test bio for Ringo"})
+
+bio1.save()
 
 
 

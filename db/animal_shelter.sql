@@ -1,3 +1,4 @@
+DROP TABLE bios;
 DROP TABLE animals;
 DROP TABLE owners;
 
@@ -15,4 +16,10 @@ adoptable BOOLEAN,
 owner_id INT4 REFERENCES owners(id),
 training_status BOOLEAN,
 vet_status BOOLEAN
+);
+
+CREATE TABLE bios(
+id SERIAL4 PRIMARY KEY,
+animal_id INT4 REFERENCES animals(id),
+biography VARCHAR(1000)
 );
