@@ -15,7 +15,7 @@
 
 
 <div class="flex_grid_cell">
-  <img src="/images/<%=@animal.name.downcase%>.png" alt="<%=@animal.name.downcase%>" style="width:600px;height:400px;">
+  <img src="/images/<%=@animal.name.downcase%>.png" alt="<%=@animal.name.downcase%>" style="width:600px;height:400px;" border="10px";>
 </div>
 
 </div>
@@ -26,18 +26,40 @@
   <input type="submit" value="Update Details"/>
 </form> -->
 
+<div class="flex_grid">
+
+<div class="flex_grid_column">
+
+<div class="flex_grid_cell">
 <form method="GET" action="/animals/<%= @animal.id %>/edit_vet" >
   <input class="func_button" type="submit" value="Change Vet Status"/>
 </form>
+</div>
 
+<div class="flex_grid_cell">
 <form method="GET" action="/animals/<%= @animal.id %>/edit_training" >
   <input class="func_button" type="submit" value="Change Training Status"/>
 </form>
+</div>
 
+<div class="flex_grid_cell">
 <form method="GET" action="/animals/<%= @animal.id %>/assign" >
   <input class="func_button" type="submit" value="Assign to Owner"/>
 </form>
+</div>
 
+<div class="flex_grid_cell">
 <form method="POST" action="/animals/<%= @animal.id %>/delete" >
   <input class="func_button" type="submit" value="Delete Record"/>
 </form>
+</div>
+
+<div class="flex_grid_cell">
+<form method="GET" action="/animals" >
+  <input class="func_button" type="submit" value="Back to List"/>
+</form>
+</div>
+
+</div>
+
+</div>
