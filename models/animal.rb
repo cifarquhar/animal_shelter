@@ -72,6 +72,12 @@ class Animal
     new_bio.save
   end
 
+  def update_bio(bio)
+    animal_bio = Bio.find(@id)
+    animal_bio.biography = bio
+    animal_bio.update
+  end
+
   def show_bio()
     sql = "SELECT b.* FROM bios b INNER JOIN animals a ON a.id = b.animal_id WHERE b.animal_id = #{@id}"
     bio = Bio.map_bios(sql)[0]

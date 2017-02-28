@@ -6,11 +6,16 @@ body{
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
+.form_alignment * {
+  vertical-align: top;
+}
+
 .submissionfield { 
   width: 500px; 
   height: 200px; 
   border: 1px solid #999999; 
   padding: 5px; 
+  font-size: 14px;
 }
 
 .h1_title { 

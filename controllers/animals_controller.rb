@@ -47,7 +47,11 @@ end
 
 post '/animals/:id' do
   @animal = Animal.find(params[:id])
-  @animal.add_bio(params[:biography])
+  if @animal.show_bio == ""
+    @animal.add_bio(params[:biography]) 
+  else
+    @animal.update_bio(params[:biography])
+  end
   erb(:"animals/create_bio")
 end
 

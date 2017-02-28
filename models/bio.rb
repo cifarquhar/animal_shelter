@@ -23,10 +23,24 @@ class Bio
     @id = new_bio[0]['id'].to_i
   end
 
+  def self.find(id_to_find)
+    sql = "SELECT * FROM bios WHERE animal_id = #{id_to_find}"
+    self.map_bios(sql)[0]
+  end
+
+  def update()
+    sql = "UPDATE bios SET (biography) = ('#{@biography}') WHERE animal_id = #{@animal_id}"
+    SqlRunner.run(sql)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM bios"
     SqlRunner.run(sql)
   end
 
+  def delete(id_to_delete)
+    sql = "DELETE FROM bios WHERE animal_id = #{id_to_delete}"
+    SqlRunner.run(sql)
+  end
 
 end
