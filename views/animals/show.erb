@@ -1,3 +1,9 @@
+<div class="flex_grid">
+
+<div class="flex_grid_row">
+
+
+<div class="flex_grid_cell">
 <p>Name: <%= @animal.name %></p>
 <p>Type: <%= @animal.type %></p>
 <p>Admission Date: <%= @animal.admission_date %></p>
@@ -5,7 +11,16 @@
 <p>Owner: <%= Owner.find(@animal.owner_id).name if @animal.owner_id %></p>
 <p>In training?: <%= @animal.training_status == 't' ? "Yes" : "No" %></p>
 <p>Waiting for vet treatment?: <%= @animal.vet_status == 't' ? "Yes" : "No" %></p>
+</div>
 
+
+<div class="flex_grid_cell">
+  <img src="/images/<%=@animal.name.downcase%>.png" alt="<%=@animal.name.downcase%>" style="width:600px;height:400px;">
+</div>
+
+</div>
+
+</div>
 
 <!-- <form method="GET" action="/animals/<%= @animal.id %>/edit" >
   <input type="submit" value="Update Details"/>

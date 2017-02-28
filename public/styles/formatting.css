@@ -13,3 +13,18 @@ h1 {
 .p_intro {
   text-align: center;
 }
+
+.flex_grid{
+}
+
+.flex_grid_row{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex_grid_cell{
+  flex: 1;
+  padding: 10px;
+ /* border: solid 1px beige;
+  text-align: center;*/
+}
