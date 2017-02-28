@@ -3,7 +3,9 @@
  <p>Name: <%= @animal.name %></p>
 
  <label for="bio">What's this animal's story?</label>
-<textarea class="submissionfield" id="bio" name="biography"></textarea>
+<textarea class="submissionfield" id="bio" name="biography">
+  <%= @animal.show_bio %>
+</textarea>
 
 <!--  <input class="submissionfield" type="text" id="bio" name="biography"/> -->
 
