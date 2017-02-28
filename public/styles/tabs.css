@@ -1,6 +1,6 @@
 .tabs {
   position: relative;   
-  min-height: 200px; /* Necessary, aparently */
+  min-height: 400px;
   clear: both;
   margin: 25px 0;
 }
@@ -26,7 +26,8 @@
   right: 0;
   bottom: 0;
   padding: 20px;
-  border: 1px solid #ccc; 
+  border: 1px solid #ccc;
+  overflow: scroll;
 }
 [type=radio]:checked ~ label {
   background: white;
