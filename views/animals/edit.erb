@@ -3,14 +3,12 @@
  <p>Name: <%= @animal.name %></p>
 
  <p class="form_alignment">
- <label for="bio">What's this animal's story?</label>
-<textarea class="submissionfield" id="bio" name="biography" value="&quot;&#8249;" maxlength="1000">
-  <%= @animal.show_bio %>
-</textarea>
+   <label for="bio">What's this animal's story?</label>
+   <textarea class="submissionfield" id="bio" name="biography" value="&quot;&#8249;" maxlength="1000">
+    <%= @animal.show_bio %>
+  </textarea>
 </p>
 
-<!--  <input class="submissionfield" type="text" id="bio" name="biography"/> -->
+<input class="func_button" type="submit" value="Add biography"/>
 
-  <input class="func_button" type="submit" value="Add biography"/>
-  
 </form>

@@ -1,72 +1,69 @@
 <div class="flex_grid">
 
-<div class="flex_grid_row">
+  <div class="flex_grid_row">
 
 
-<div class="flex_grid_cell">
-<p>Name: <%= @animal.name %></p>
-<p>Type: <%= @animal.type %></p>
-<p>Admission Date: <%= @animal.admission_date %></p>
-<p>Ready for adoption?: <%= @animal.adoptable == 't' ? "Yes" : "No" %></p>
-<p>Owner: <%= Owner.find(@animal.owner_id).name if @animal.owner_id %></p>
-<p>In training?: <%= @animal.training_status == 't' ? "Yes" : "No" %></p>
-<p>Waiting for vet treatment?: <%= @animal.vet_status == 't' ? "Yes" : "No" %></p>
-<p>Bio: <%= @animal.show_bio %></p>
+    <div class="flex_grid_cell">
+      <p>Name: <%= @animal.name %></p>
+      <p>Type: <%= @animal.type %></p>
+      <p>Admission Date: <%= @animal.admission_date %></p>
+      <p>Ready for adoption?: <%= @animal.adoptable == 't' ? "Yes" : "No" %></p>
+      <p>Owner: <%= Owner.find(@animal.owner_id).name if @animal.owner_id %></p>
+      <p>In training?: <%= @animal.training_status == 't' ? "Yes" : "No" %></p>
+      <p>Waiting for vet treatment?: <%= @animal.vet_status == 't' ? "Yes" : "No" %></p>
+      <p>Bio: <%= @animal.show_bio %></p>
+    </div>
+
+
+    <div class="flex_grid_cell">
+      <img src="/images/<%=@animal.name.downcase%>.png" alt="<%=@animal.name.downcase%>" style="width:600px;height:400px;background-color:white" border="10px">
+    </div>
+
+  </div>
+
 </div>
 
-
-<div class="flex_grid_cell">
-  <img src="/images/<%=@animal.name.downcase%>.png" alt="<%=@animal.name.downcase%>" style="width:600px;height:400px;background-color:white" border="10px">
-</div>
-
-</div>
-
-</div>
-
-<!-- <form method="GET" action="/animals/<%= @animal.id %>/edit" >
-  <input type="submit" value="Update Details"/>
-</form> -->
 
 <div class="flex_grid">
 
-<div class="flex_grid_column">
+  <div class="flex_grid_column">
 
-<div class="flex_grid_cell">
-<form method="GET" action="/animals/<%= @animal.id %>/edit_vet" >
-  <input class="func_button" type="submit" value="Change Vet Status"/>
-</form>
-</div>
+    <div class="flex_grid_cell">
+      <form method="GET" action="/animals/<%= @animal.id %>/edit_vet" >
+        <input class="func_button" type="submit" value="Change Vet Status"/>
+      </form>
+    </div>
 
-<div class="flex_grid_cell">
-<form method="GET" action="/animals/<%= @animal.id %>/edit_training" >
-  <input class="func_button" type="submit" value="Change Training Status"/>
-</form>
-</div>
+    <div class="flex_grid_cell">
+      <form method="GET" action="/animals/<%= @animal.id %>/edit_training" >
+        <input class="func_button" type="submit" value="Change Training Status"/>
+      </form>
+    </div>
 
-<div class="flex_grid_cell">
-<form method="GET" action="/animals/<%= @animal.id %>/edit_bio" >
-  <input class="func_button" type="submit" value="Add/Edit Bio"/>
-</form>
-</div>
+    <div class="flex_grid_cell">
+      <form method="GET" action="/animals/<%= @animal.id %>/edit_bio" >
+        <input class="func_button" type="submit" value="Add/Edit Bio"/>
+      </form>
+    </div>
 
-<div class="flex_grid_cell">
-<form method="GET" action="/animals/<%= @animal.id %>/assign" >
-  <input class="func_button" type="submit" value="Assign to Owner"/>
-</form>
-</div>
+    <div class="flex_grid_cell">
+      <form method="GET" action="/animals/<%= @animal.id %>/assign" >
+        <input class="func_button" type="submit" value="Assign to Owner"/>
+      </form>
+    </div>
 
-<div class="flex_grid_cell">
-<form method="POST" action="/animals/<%= @animal.id %>/delete" >
-  <input class="func_button" type="submit" value="Delete Record"/>
-</form>
-</div>
+    <div class="flex_grid_cell">
+      <form method="POST" action="/animals/<%= @animal.id %>/delete" >
+        <input class="func_button" type="submit" value="Delete Record"/>
+      </form>
+    </div>
 
-<div class="flex_grid_cell">
-<form method="GET" action="/animals" >
-  <input class="func_button" type="submit" value="Back to List"/>
-</form>
-</div>
+    <div class="flex_grid_cell">
+      <form method="GET" action="/animals" >
+        <input class="func_button" type="submit" value="Back to List"/>
+      </form>
+    </div>
 
-</div>
+  </div>
 
 </div>
