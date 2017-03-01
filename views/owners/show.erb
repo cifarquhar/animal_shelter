@@ -3,20 +3,20 @@
 
 <div class="flex_grid">
 
-<div class="flex_grid_column">
+  <div class="flex_grid_column">
 
-<div class="flex_grid_cell">
-<form method="POST" action="/owners/<%= @owner.id %>/delete" >
-  <input class="func_button" type="submit" value="Delete Record"/>
-</form>
-</div>
+    <div class="flex_grid_cell">
+      <form method="POST" action="/owners/<%= @owner.id %>/delete" >
+        <input class="func_button" type="submit" value="Delete Record"/>
+      </form>
+    </div>
 
-<div class="flex_grid_cell">
-<form method="GET" action="/owners" >
-  <input class="func_button" type="submit" value="Back to List"/>
-</form>
-</div>
+    <div class="flex_grid_cell">
+      <form method="GET" action="/owners" >
+        <input class="func_button" type="submit" value="Back to List"/>
+      </form>
+    </div>
 
-</div>
+  </div>
 
 </div>

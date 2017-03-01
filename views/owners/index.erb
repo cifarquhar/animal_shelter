@@ -2,26 +2,26 @@
 
 <div class="tabs">
 
-<div class="content">
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th>Pets Owned</th>
-  </tr>
-  <% for owner in @owners %>
-  <% if owner.name != "Shelter" %>
-  <tr>
-    <td><a href="/owners/<%= owner.id %>"><%= owner.name %></a></td>
-    <td>|</td>
-    <td>
-      <%= owner.animals.join(", ") %>
-    </td>
-  </tr>
-  <% end %>
-  <% end %>
-</table>
-</div>
+  <div class="content">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th></th>
+        <th>Pets Owned</th>
+      </tr>
+      <% for owner in @owners %>
+      <% if owner.name != "Shelter" %>
+      <tr>
+        <td><a href="/owners/<%= owner.id %>"><%= owner.name %></a></td>
+        <td>|</td>
+        <td>
+          <%= owner.animals.join(", ") %>
+        </td>
+      </tr>
+      <% end %>
+      <% end %>
+    </table>
+  </div>
 
 
 </div>
@@ -29,15 +29,15 @@
 
 <div class="flex_grid">
 
-<div class="flex_grid_column">
+  <div class="flex_grid_column">
 
-<div class="flex_grid_cell">
+    <div class="flex_grid_cell">
 
-<form method="GET" action="/owners/new" >
-  <input class="func_button" type="submit" value="Add New Owner"/>
-</form>
-</div>
+      <form method="GET" action="/owners/new" >
+        <input class="func_button" type="submit" value="Add New Owner"/>
+      </form>
+    </div>
 
-</div>
+  </div>
 
 </div>
