@@ -16,11 +16,16 @@ animal2 = Animal.new({'name' => "Milly", 'type' => "Cat", 'admission_date' => '2
 animal1.save()
 animal2.save()
 
-owner1 = Owner.new({'name' => "Colin"})
-owner2 = Owner.new({'name' => "Vicky"})
+owner1 = Owner.new({'name' => "Shelter"})
+owner2 = Owner.new({'name' => "Colin"})
+owner3 = Owner.new({'name' => "Vicky"})
 
 owner1.save()
 owner2.save()
+owner3.save()
+
+animal1.assign_to_owner(owner1)
+animal2.assign_to_owner(owner1)
 
 bio1 = Bio.new({'animal_id' => animal1.id, 'biography' => "Test bio for Ringo"})
 

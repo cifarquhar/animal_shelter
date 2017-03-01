@@ -30,7 +30,12 @@ class Owner
   end
 
   def self.find(id)
-    sql = "SELECT * FROM owners WHERE @id = #{id}"
+    sql = "SELECT * FROM owners WHERE id = #{id}"
+    self.map_owners(sql)[0]
+  end
+
+  def self.find_by_name(owner_name)
+    sql = "SELECT * FROM owners WHERE name = '#{owner_name}'"
     self.map_owners(sql)[0]
   end
 

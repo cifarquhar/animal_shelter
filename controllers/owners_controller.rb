@@ -25,6 +25,13 @@ end
 
 post '/owners/:id/delete' do
   owner = Owner.find(params[:id])
+  animals = Animal.all
+  animals_owned = animals.find_all {|animal| animal.owner_id == owner.id}
+  animals_owned.each do |animal|
+    animal.owner_id = nil
+    animal.adoptable = true
+    animal.update
+  end
   owner.delete() 
   erb(:"owners/destroy")
 end
