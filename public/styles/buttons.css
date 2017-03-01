@@ -31,3 +31,7 @@
     border-radius: 12px;
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
+
+.func_button:hover{
+    background-color: #310312
+}
