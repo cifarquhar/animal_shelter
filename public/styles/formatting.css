@@ -26,6 +26,12 @@ body{
   flex-direction: row;
 }
 
+.flex_grid_nav_row{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 .flex_grid_column{
   display: flex;
   flex-direction: column;
@@ -36,4 +42,19 @@ body{
   padding: 10px;
 }
 
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: #000099;
+    background-color: transparent;
+    text-decoration: underline;
+}
 
