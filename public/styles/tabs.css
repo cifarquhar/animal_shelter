@@ -30,11 +30,11 @@
   padding: 20px;
   border: 1px solid #ccc;
   overflow: scroll;
-  background-color: #E4F380;
+  background-color: #F6FAFB;
 }
 [type=radio]:checked ~ label {
-  background: white;
-  border-bottom: 1px solid white;
+  background: #F6FAFB;
+  border-bottom: 1px solid #F6FAFB;
   z-index: 2;
 }
 [type=radio]:checked ~ label ~ .content {
