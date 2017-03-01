@@ -38,8 +38,8 @@ class Bio
     SqlRunner.run(sql)
   end
 
-  def delete(id_to_delete)
-    sql = "DELETE FROM bios WHERE animal_id = #{id_to_delete}"
+  def delete()
+    sql = "DELETE FROM bios WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
 

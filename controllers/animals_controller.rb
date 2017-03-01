@@ -57,13 +57,19 @@ end
 
 post '/animals/:id/delete' do
   animal = Animal.find(params[:id])
+  animal_bio = Bio.find(animal.id)
+  animal_bio.delete()
   animal.delete() 
   erb(:"animals/destroy")
 end
 
 get '/animals/:id/assign' do
   @animal = Animal.find(params[:id])
-  erb(:"animals/assign")
+  if @animal.adoptable == 't'
+    erb(:"animals/assign")
+  else
+    erb(:"animals/assign_fail")
+  end
 end
 
 post '/animals/:id/assign' do
