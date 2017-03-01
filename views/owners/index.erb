@@ -11,10 +11,10 @@
   </tr>
   <% for owner in @owners %>
   <tr>
-    <td><a href="/owners/<%= owner.id %>"><%= owner.name %></a></td>
-    <td>|</td>
+    <td><a href="/owners/<%= owner.id %>"><%= owner.name if owner.name != "Shelter" %></a></td>
+    <td><%= print "|" if owner.name != "Shelter" %></td>
     <td>
-      <%= owner.animals.join(", ") %>
+      <%= owner.animals.join(", ") if owner.name != "Shelter"%>
     </td>
   </tr>
   <% end %>
