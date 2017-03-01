@@ -58,7 +58,7 @@ end
 post '/animals/:id/delete' do
   animal = Animal.find(params[:id])
   animal_bio = Bio.find(animal.id)
-  animal_bio.delete()
+  animal_bio.delete() if animal_bio
   animal.delete() 
   erb(:"animals/destroy")
 end
