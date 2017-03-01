@@ -10,33 +10,32 @@
 </head>
 <body background="/images/app_background.jpg">
   <nav>
-   <div class="flex_grid">
 
-     <div class="flex_grid_nav_row">
+   <div class="flex_grid_nav_row">
 
-       <div class="flex_grid_cell">
-        <form method="GET" action="/" >
+     <div class="flex_grid_cell">
+      <form method="GET" action="/" >
         <input class="nav_button" type="submit" value="Home"/>
       </form>
-       </div>
-      <div class="flex_grid_cell">
+    </div>
+    <div class="flex_grid_cell">
       <form method="GET" action="/animals" >
         <input class="nav_button" type="submit" value="Animals"/>
       </form>
-       </div>
-   <div class="flex_grid_cell">
-    <form method="GET" action="/owners" >
+    </div>
+    <div class="flex_grid_cell">
+      <form method="GET" action="/owners" >
         <input class="nav_button" type="submit" value="Owners"/>
       </form> 
-      </div>
-     <div class="flex_grid_cell">
+    </div>
+    <div class="flex_grid_cell">
      <form method="GET" action="/search/animal" >
-        <input class="nav_button" type="submit" value="Search for an Animal"/>
-      </form>
-      </div>
-   
-  </nav>
+      <input class="nav_button" type="submit" value="Search for an Animal"/>
+    </form>
+  </div>
 
-  <%= yield %>
+</nav>
+
+<%= yield %>
 </body>
 </html>
