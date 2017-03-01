@@ -10,13 +10,15 @@
     <th>Pets Owned</th>
   </tr>
   <% for owner in @owners %>
+  <% if owner.name != "Shelter" %>
   <tr>
-    <td><a href="/owners/<%= owner.id %>"><%= owner.name if owner.name != "Shelter" %></a></td>
-    <td><%= print "|" if owner.name != "Shelter" %></td>
+    <td><a href="/owners/<%= owner.id %>"><%= owner.name %></a></td>
+    <td>|</td>
     <td>
-      <%= owner.animals.join(", ") if owner.name != "Shelter"%>
+      <%= owner.animals.join(", ") %>
     </td>
   </tr>
+  <% end %>
   <% end %>
 </table>
 </div>
