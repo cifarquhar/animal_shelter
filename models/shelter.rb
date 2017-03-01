@@ -13,7 +13,7 @@ class Shelter
     animal_adoptable = false
 
     animal_adoptable = true if animal_training_status == "false" && animal_vet_status == "false"
-  
+    
     new_animal = Animal.new({'name' => "#{animal_name.capitalize}", 'type' => "#{animal_type.capitalize}", 'admission_date' => timestamp, 'adoptable' => animal_adoptable, 'training_status' => animal_training_status, 'vet_status' => animal_vet_status})
     new_animal.save()
     shelter = Owner.find_by_name("Shelter")

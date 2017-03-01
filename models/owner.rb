@@ -9,10 +9,6 @@ class Owner
     @name = options['name']
   end
 
-  def get_name()
-    return @name
-  end
-
   def save()
     sql = "INSERT INTO owners (name) VALUES ('#{@name}') RETURNING id"
     owners = SqlRunner.run(sql)
@@ -48,12 +44,6 @@ class Owner
     sql = "DELETE FROM owners WHERE id = #{@id}"
     SqlRunner.run(sql)
   end
-
-  # def adopt_animal(animal)
-  #   sql = "UPDATE animals SET (owner_id) = (#{@id}) WHERE id = #{animal.id}"
-  #   SqlRunner.run(sql)
-  #   animal.owner_id = @id
-  # end
 
   def animals()
     sql = "SELECT a.* FROM animals a INNER JOIN owners o ON a.owner_id = o.id WHERE a.owner_id = #{@id}"
