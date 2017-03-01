@@ -2,6 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative( '../models/owner.rb' )
 require_relative('../models/shelter.rb')
+require_relative('../models/animal.rb')
 
 get '/owners' do
   @owners = Owner.all()
@@ -26,11 +27,11 @@ end
 post '/owners/:id/delete' do
   owner = Owner.find(params[:id])
   animals = Animal.all
+  shelter = Owner.find_by_name("Shelter")
   animals_owned = animals.find_all {|animal| animal.owner_id == owner.id}
   animals_owned.each do |animal|
-    animal.owner_id = nil
-    animal.adoptable = true
-    animal.update
+    animal.assign_to_owner(shelter)
+    animal.adoptable = "t"
   end
   owner.delete() 
   erb(:"owners/destroy")
