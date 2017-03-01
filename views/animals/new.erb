@@ -1,24 +1,38 @@
 
-<form method="POST" action="/animals">
+<div class="flex_grid_column">
 
-  <label for="animal-name">Name:</label>
-  <input type="text" id="animal-name" name="name"/>
 
-  <label for="animal-type">Type:</label>
-  <input type="text" id="animal-type" name="type"/>
+  <form method="POST" action="/animals">
 
-  <label for="training-status">Training required?</label>
-  <select id="training-status" name="training_status">
-    <option value="<%=true%>">Yes</option>
-    <option value="<%=false%>">No</option>
-  </select>
+    <div class="flex_grid_cell">
+      <label for="animal-name">Name:</label>
+      <input type="text" id="animal-name" name="name"/>
+    </div>
 
-  <label for="vet-status">Vet treatment required?</label>
-  <select id="vet-status" name="vet_status">
-    <option value="<%=true%>">Yes</option>
-    <option value="<%=false%>">No</option>
-  </select>
+    <div class="flex_grid_cell">
+      <label for="animal-type">Type:</label>
+      <input type="text" id="animal-type" name="type"/>
+    </div>
 
-  <input class="func_button" type="submit" value="Add Animal"/>
-  
-</form>
+    <div class="flex_grid_cell">
+      <label for="training-status">Training required?</label>
+      <select id="training-status" name="training_status">
+        <option value="<%=true%>">Yes</option>
+        <option value="<%=false%>">No</option>
+      </select>
+    </div>
+
+    <div class="flex_grid_cell">
+      <label for="vet-status">Vet treatment required?</label>
+      <select id="vet-status" name="vet_status">
+        <option value="<%=true%>">Yes</option>
+        <option value="<%=false%>">No</option>
+      </select>
+    </div>
+
+    <div class="flex_grid_cell">
+      <input class="func_button" type="submit" value="Add Animal"/>
+    </div>
+  </form>
+
+</div>
