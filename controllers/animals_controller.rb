@@ -66,6 +66,7 @@ end
 get '/animals/:id/assign' do
   @animal = Animal.find(params[:id])
   if @animal.adoptable == 't'
+    @owners = Owner.all
     erb(:"animals/assign")
   else
     erb(:"animals/assign_fail")
