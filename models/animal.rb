@@ -26,7 +26,7 @@ class Animal
 
   def self.map_animals(sql)
     animals = SqlRunner.run(sql)
-    return animals.map {|animal| Animal.new(animal)}   
+    return animals.map {|animal| Animal.new(animal)}
   end
 
   def self.all()
@@ -56,7 +56,7 @@ class Animal
 
   def assign_to_owner(owner)
     @owner_id = nil
-    sql = "UPDATE animals SET (owner_id) = (#{owner.id}) WHERE id = #{@id}"
+    sql = "UPDATE animals SET (owner_id) = ROW(#{owner.id}) WHERE id = #{@id}"
     SqlRunner.run(sql)
     @owner_id = owner.id
   end
