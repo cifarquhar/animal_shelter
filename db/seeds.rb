@@ -1,4 +1,4 @@
-require('pry')
+# require('pry')
 require_relative('../models/animal')
 require_relative('../models/owner')
 require_relative('../models/shelter')
@@ -33,5 +33,5 @@ bio1.save()
 
 
 
-binding.pry
-nil
+# binding.pry
+# nil
